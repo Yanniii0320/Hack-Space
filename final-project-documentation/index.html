@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>WCC Portfolio - Demo Page</title>
+
+        <!-- including for some global styling -->
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        <!-- if you have sub-pages think about adding a simple back button -->
+        <nav>
+            <a href="../">HOME</a>
+        </nav>
+        <header class="documentation-header">
+            <section class="center-text">
+                <h1>Mechanical Record</h1>
+                <h2>by Ni Yan</h6>
+                <p>physical interactive record that would allow visitors to experience the record in its original playing mode.</p> 
+            </section>
+        </header>
+
+        <main class="documentation-page">
+            <section>
+                <div class="responsive-video centered-content">
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/822686811?h=488908950a" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+                </div>
+            </section>
+            <section>
+                <h3>Introduction</h3>
+                <p>I wanted to create a physical interactive record that would allow visitors to experience the record in its original playing mode in real life through specific interactions.</p>
+            </section>
+            <section>
+                <h3>Concept and Background Research</h3>
+                
+                <p>Virtual reality in digital media is ubiquitous in our lives today. Take music, for example, with music players and music software now filling our entire lives. We are immersed in the convenience of digital life and are accustomed to searching and accessing information more quickly. Inspired by the article sense practicing, in which the author explores food beyond the boundaries of people's senses and tries to expand the existing ones, I wanted to create an interactive device that would allow people to feel the principles of music playing in the real world.</p>
+                <p>For Jesse Lucas' work "DYSKOGRAF" he used a paper "record" and made a record player out of felt. When one makes a random drawing on the paper record and places it on the record player, the record player generates a musical rhythm in response to the drawing and plays it in real-time. The whole process was very interesting to me. I then saw other works that explore how people can expand their perceptual boundaries and works such as "Rectable" and The Octopus Project's audio-visual works interactive works.</p>
+                
+                <!-- if you have a full width image try make it not too tall -->
+                <img src="../assets/images/picture11.jpg"/>
+                
+            </section>
+            <section>
+                <h3>Technical Implementation</h3>
+
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-third">
+                    <div class="flex-item">
+                        <img src="../assets/images/picture12.jpeg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture13.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture14.jpeg"/>
+                    </div>
+                </div>
+                
+                3.1.1Hardware
+                <p>Jesse Lucas's work "DYSKOGRAF" is a replica of the composition of a real record player, in my case I wanted to show the rotation of the music being played, so I chose to use blender to model and 3d print a gear set in which each Each gear in the set can be taken apart and reassembled, giving the piece a more unstructured and random feel. </p>
+                    
+                    3.1.2 Software
+                <p>My whole project is based on the principle of pre-setting colors and giving these colors corresponding audio, when the webcam captures a color it returns some values to the computer and triggers the audio response. The software I used was max msp and the main function I used was jitter, I used four colors in total, which corresponded to four different audio effects. </p>
+                    
+                    3.2Technical difficulties
+                <p>There were a few difficulties throughout the implementation. The first is how to convert the colors captured by the camera into data that can be picked up by the computer and then converted into the corresponding sound effects. To do this I referred to the YouTube video Motion tracking on Ableton Live (controlling midi) by Gustavo Silveira - the tutorial locates the colors captured by the computer. Whenever a color is tracked, the corresponding value is given, and a scale tool is used to put the value within 127, so that all midi sounds can be used. Secondly, how to get a camera to trigger different sound effects when it traces different colors at the same time, I took the approach of copying the four original patches in their entirety and setting a different range of colour tracking values for each patch, which is very primitive but ensures that the switches between each patch do not affect each other. The final and most difficult problem was that each frame of the preset color captured by the camera was departing from the music play button, which caused the music to play a bit haphazardly. For this reason, I have given the trigger points a numerical range, which adds a degree of stability to the music playback. </p>
+                     </p>
+            
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-half">
+                    <div class="flex-item">
+                        <img src="../assets/images/picture15.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture16.jpg"/>
+                    </div>
+                </div>
+
+                <!-- default flex item is for 4 & follows media query styling for home page -->
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <img src="../assets/images/picture17.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture18.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture19.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/picture20.jpg"/>
+                    </div>
+                </div>
+         
+            </section>
+            <section>
+                <h3>Reflection and Future Development</h3>
+                <p>The main tool I used in this project was max msp. The most difficult part of the project was the 'stability' of the code, but also the stability of the gear set on the base plate. A piece of work in the showroom has to have all the parts running smoothly and seamlessly. In the future, I'm also looking at "improving the overall stability of the project" as a major area of improvement, thinking of better ways to make it so that when the camera captures a color it only plays the corresponding sound once, rather than every frame. I also need to think of a better way of fixing the piece to the base plate. The materials I am using are magnets and iron plates, and the different forces used by the participants in rotating the gears make it easy to change the position of the magnets. But the beauty of this piece is that it is a visual and playful way of showing how color and sound interact and work together. My original intention was to allow people to experience the original principles of music playing in the physical world, to change and create the effects of music playing through their actions, to create their own unique musical loops. I hope that after watching this piece, the audience will be more fully aware that computers are tools that help us to feel the world more acutely, to be more interested in the details of life in the real world, and to discover and feel the beauty of the real world.
+                </p>
+            </section>
+            <!-- <section>
+                <h3>References</h3>
+                <ul>
+                    <li>Technical Reference example.</li>
+                    <li><a href="http://kodh.is/dyskograf/">http://kodh.is/dyskograf/</a></li>
+                    <li>Conceptual Reference example. Include link where possible.</li>
+                    <li>Tucker, Amy Rebecca. "Chromidio: an interface for color tracking with key frames in Max and Nato." PhD diss., Texas A&amp;M University, 2002.</li>
+                </ul>
+            </section> -->
+            <section>
+                <h3>References</h3>
+                <li>Technical Reference example.</li>
+                <ul>
+                    <li><a href="http://kodh.is/dyskograf/">http://kodh.is/dyskograf/</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=6t2MnoquWX4&list=PLuuhCdY5kEZ8Q6S3e0hDV9JYz8gn6x0el&index=20&t=802s">https://www.youtube.com/watch?v=6t2MnoquWX4&list=PLuuhCdY5kEZ8Q6S3e0hDV9JYz8gn6x0el&index=20&t=802s</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=kKgHxlVDsoQ&t=331s">https://www.youtube.com/watch?v=kKgHxlVDsoQ&t=331s</a></li>
+                    <li><a href="https://var-mar.info/dream-painter/">https://var-mar.info/dream-painter/</a></li>
+                    <li><a href="https://www.moogmusic.com/media/octopus-project-moog-etherwave">https://www.moogmusic.com/media/octopus-project-moog-etherwave</a></li>
+                    <li><a href="https://www.artic.edu/artworks/239025/color-chaser">https://www.artic.edu/artworks/239025/color-chaser</a></li>
+                    <li><a href="https://www.kidrobot.com/blogs/news/drawing-apparatus-by-robert-howsare">https://www.kidrobot.com/blogs/news/drawing-apparatus-by-robert-howsare</a></li>
+                    <li><a href="https://www.gustavosilveira.net/threedots">https://www.gustavosilveira.net/threedots</a></li>
+                </ul>
+                <li>Technical Reference example.</li>
+                <ul><li>Tucker, Amy Rebecca. "Chromidio: an interface for color tracking with key frames in Max and Nato." PhD diss., Texas A&M University, 2002.</li>
+                    <li>Eidelman, Elizaveta, and Serguei A. Mokhov. "Alchymical Mirror: Real-time Interactive Sound-and Simple Motion-Tracking Set of Jitter/Max/MSP Patches." arXiv preprint arXiv:1101.2219 (2011).</li></ul>
+                
+            </section>
+            
+            
+            <section>
+        </main>
+        </main>
+
+        <footer>
+            <!-- normally information like contact details etc  -->
+            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
+            
+         </footer>
+    </body>
+</html>
